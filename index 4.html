@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andres Cardenas - Desarrollador Web & Diseñador</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        /* Toast animations */
+        .toast-success {
+            background: linear-gradient(90deg, #10b981, #059669);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .toast-enter {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        
+        .toast-show {
+            transform: translateX(0);
+            opacity: 1;
+            transition: all 0.3s ease-out;
+        }
+        
+        .toast-exit {
+            transform: translateX(100%);
+            opacity: 0;
+            transition: all 0.3s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50 transition-all duration-300">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="text-2xl font-bold text-blue-600">Andres Cardenas</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-600 font-medium">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-600 hover:text-blue-600 font-medium">Sobre mí</a>
+                <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium">Servicios</a>
+                <a href="#portafolio" class="text-gray-600 hover:text-blue-600 font-medium">Portafolio</a>
+                <a href="#contacto" class="text-gray-600 hover:text-blue-600 font-medium">Contacto</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                <a href="#sobre-mi" class="text-gray-600 hover:text-blue-600">Sobre mí</a>
+                <a href="#servicios" class="text-gray-600 hover:text-blue-600">Servicios</a>
+                <a href="#portafolio" class="text-gray-600 hover:text-blue-600">Portafolio</a>
+                <a href="#contacto" class="text-gray-600 hover:text-blue-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section id="inicio" class="gradient-bg min-h-screen flex items-center justify-center pt-20">
+    <div class="container mx-auto px-6 text-center text-white">
+        <div class="fade-in-up">
+            <div class="mb-8">
+                <img src="img/Andres.jpg" alt="Foto de perfil de Andres Cardenas" 
+                     class="w-32 h-32 rounded-full mx-auto border-4 border-white shadow-lg object-cover hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">Andres Cardenas</h1>
+            <h2 class="text-xl md:text-2xl mb-6 text-blue-100">Desarrollador Web Full Stack & Diseñador UI/UX</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-blue-50">
+                Transformo ideas en experiencias digitales excepcionales. Especializado en crear sitios web modernos y aplicaciones que impulsan el crecimiento de tu negocio.
+            </p>
+            <a href="#contacto" class="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-full hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 shadow-lg">
+                Contáctame Ahora
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Secciones Sobre mí -->
+<section id="sobre-mi" class="py-20 bg-white fade-in-up">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Sobre mí</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Conoce más sobre mi experiencia, pasión y las habilidades que me permiten crear soluciones digitales excepcionales.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Texto de presentación -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Mi Historia</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Con más de 5 años de experiencia en desarrollo web, he tenido el privilegio de trabajar con empresas de diferentes tamaños, desde startups hasta corporaciones establecidas. Mi pasión por la tecnología y el diseño me impulsa a crear soluciones que no solo funcionan perfectamente, sino que también brindan experiencias memorables a los usuarios.
+                </p>
+                <p class="text-gray-600 mb-6 leading-relaxed">
+                    Me especializo en tecnologías modernas como React, Node.js, y diseño responsivo. Creo firmemente que cada proyecto es una oportunidad para superar expectativas y crear algo extraordinario.
+                </p>
+            </div>
+            
+            <!-- Habilidades -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800">Mis Habilidades</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fab fa-html5 text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">HTML5 &amp; CSS3</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fab fa-js-square text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">JavaScript</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fab fa-react text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">React &amp; Vue</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fab fa-node-js text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">Node.js</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fas fa-database text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">Bases de Datos</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg text-center hover:bg-blue-100 transition-colors">
+                        <i class="fas fa-mobile-alt text-3xl text-blue-600 mb-2"></i>
+                        <p class="font-semibold">Diseño Responsivo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Servicios -->
+<section id="servicios" class="py-20 bg-gray-50 fade-in-up">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Mis Servicios</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Ofrezco soluciones completas de desarrollo web y diseño que ayudan a tu negocio a destacar en el mundo digital.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Servicio 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-code text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Desarrollo Web</h3>
+                <p class="text-gray-600">
+                    Sitios web modernos, rápidos y responsivos utilizando las últimas tecnologías del mercado.
+                </p>
+            </div>
+            
+            <!-- Servicio 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-paint-brush text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Diseño UI/UX</h3>
+                <p class="text-gray-600">
+                    Interfaces atractivas y funcionales que ofrecen experiencias de usuario excepcionales.
+                </p>
+            </div>
+            
+            <!-- Servicio 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-shopping-cart text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">E-commerce</h3>
+                <p class="text-gray-600">
+                    Tiendas online completas con sistemas de pago seguros y gestión de inventario.
+                </p>
+            </div>
+            
+            <!-- Servicio 4 -->
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-rocket text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Optimización SEO</h3>
+                <p class="text-gray-600">
+                    Mejoro la visibilidad de tu sitio web en motores de búsqueda para aumentar tu tráfico.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sección Portafolio -->
+<section id="portafolio" class="py-20 bg-white fade-in-up">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">Mi Portafolio</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                Algunos de mis proyectos más destacados que demuestran mi capacidad para crear soluciones digitales innovadoras.
+            </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Proyecto 1 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&amp;h=250&amp;fit=crop" alt="Proyecto E-commerce" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Tienda Online Premium</h3>
+                    <p class="text-gray-600 mb-4">
+                        Plataforma de e-commerce completa con panel administrativo y sistema de pagos integrado.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Node.js</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyecto 2 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&amp;h=250&amp;fit=crop" alt="App Corporativa" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">App Corporativa</h3>
+                    <p class="text-gray-600 mb-4">
+                        Aplicación web para gestión empresarial con dashboard interactivo y reportes en tiempo real.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Laravel</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyecto 3 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&amp;h=250&amp;fit=crop" alt="Landing Page" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Landing Page Moderna</h3>
+                    <p class="text-gray-600 mb-4">
+                        Página de aterrizaje optimizada para conversión con animaciones fluidas y diseño responsivo.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">HTML5</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyecto 4 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&amp;h=250&amp;fit=crop" alt="Sistema de Gestión" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Sistema de Gestión</h3>
+                    <p class="text-gray-600 mb-4">
+                        CRM personalizado para pequeñas empresas con seguimiento de clientes y ventas.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">React</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyecto 5 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&amp;h=250&amp;fit=crop" alt="App Móvil" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">App Móvil</h3>
+                    <p class="text-gray-600 mb-4">
+                        Aplicación móvil híbrida para delivery con geolocalización y pagos en línea.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">React Native</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Firebase</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proyecto 6 -->
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&amp;h=250&amp;fit=crop" alt="Portal Educativo" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Portal Educativo</h3>
+                    <p class="text-gray-600 mb-4">
+                        Plataforma de aprendizaje en línea con sistema de cursos, evaluaciones y certificados.
+                    </p>
+                    <div class="flex space-x-2">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">Django</span>
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto -->
+<section id="contacto" class="py-20 bg-gray-900 text-white">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold mb-4">Contáctame</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto">
+                ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad.
+            </p>
+        </div>
+        
+        <div class="max-w-2xl mx-auto">
+            <!-- Formulario Google Forms con Entry IDs correctos -->
+            <form id="contactForm"
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSetOGDLjqPCGYFZwiBCC4rYeYJU3vvTGiJApyTNR2MzzDfuSw/formResponse"
+                  method="POST"
+                  target="hidden_iframe"S
+                  class="bg-gray-800 p-8 rounded-xl shadow-xl">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium mb-2 text-gray-300">Nombre Completo</label>
+                        <input type="text" id="nombre" name="entry.2067431597" required
+                               class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                               placeholder="Tu nombre completo">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium mb-2 text-gray-300">Correo Electrónico</label>
+                        <input type="email" id="email" name="entry.1148226163" required
+                               class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                               placeholder="tu@email.com">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="asunto" class="block text-sm font-medium mb-2 text-gray-300">Asunto</label>
+                    <input type="text" id="asunto" name="entry.125961506" required
+                           class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                           placeholder="¿En qué puedo ayudarte?">
+                </div>
+                
+                <div class="mb-8">
+                    <label for="mensaje" class="block text-sm font-medium mb-2 text-gray-300">Mensaje</label>
+                    <textarea id="mensaje" name="entry.2027606958" rows="6" required
+                              class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400 resize-none"
+                              placeholder="Cuéntame sobre tu proyecto o consulta..."></textarea>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-300 transform hover:scale-105">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Enviar Mensaje
+                </button>
+            </form>
+            
+            <!-- Información de contacto adicional -->
+            <div class="mt-12 text-center">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div>
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-envelope text-white"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Email</h3>
+                        <p class="text-gray-300">andrescardenasarroyo10@gmail.com</p>
+                    </div>
+                    <div>
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-phone text-white"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Teléfono</h3>
+                        <p class="text-gray-300">+57 3046339930</p>
+                    </div>
+                    <div>
+                        <div class="bg-blue-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-map-marker-alt text-white"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Ubicación</h3>
+                        <p class="text-gray-300">Sincelejo, Colombia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-blue-400 mb-2">Andres Cardenas</h3>
+                <p class="text-gray-400">Desarrollador Web Full Stack &amp; Diseñador UI/UX</p>
+            </div>
+            
+            <!-- Redes sociales -->
+            <div class="flex space-x-6">
+                <a href="https://co.linkedin.com/" class="text-gray-400 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="https://github.com/" class="text-gray-400 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-github text-2xl"></i>
+                </a>
+                <a href="https://x.com/?lang=es" class="text-gray-400 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/" class="text-gray-400 hover:text-blue-400 transition-colors">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <hr class="border-gray-700 my-8">
+        
+        <div class="text-center text-gray-400">
+            <p>© 2025 Andres Cardenas. Todos los derechos reservados. | Potenciando ideas y oportunidades en el mundo digital.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Toast de confirmación mejorado -->
+<div id="toast" class="fixed top-4 right-4 z-50 hidden">
+    <div class="toast-success text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-3 toast-enter">
+        <i class="fas fa-check-circle text-xl"></i>
+        <div>
+            <p class="font-semibold">¡Mensaje enviado!</p>
+            <p class="text-sm opacity-90">Te contactaré pronto</p>
+        </div>
+        <button onclick="hideToast()" class="ml-4 text-white hover:text-gray-200">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Iframe oculto para manejar respuesta de Google Forms -->
+<iframe name="hidden_iframe" style="display:none;" onload="handleFormSubmit()"></iframe>
+
+<script>
+    // Variables globales para el manejo del formulario
+    let formSubmitted = false;
+    
+    // Menú móvil
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cerrar menú móvil al hacer clic en enlaces
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    });
+
+    // Animaciones de scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Efecto de scroll en header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('shadow-lg');
+        } else {
+            header.classList.remove('shadow-lg');
+        }
+    });
+
+    // MANEJO DEL FORMULARIO DE GOOGLE FORMS
+    
+    // Detectar envío del formulario
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        console.log('📝 Formulario enviado a Google Forms');
+        formSubmitted = true;
+        
+        // Cambiar el texto del botón mientras se procesa
+        const button = this.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+        button.disabled = true;
+        
+        // Timeout de seguridad por si no hay respuesta
+        setTimeout(() => {
+            if (formSubmitted) {
+                console.log('⚠️ Timeout - Restaurando botón');
+                button.innerHTML = originalText;
+                button.disabled = false;
+                formSubmitted = false;
+            }
+        }, 10000); // 10 segundos
+    });
+
+    // Esta función se ejecuta cuando Google Forms responde
+    function handleFormSubmit() {
+        console.log('🎯 Respuesta recibida de Google Forms');
+        
+        if (formSubmitted) {
+            console.log('✅ Mostrando confirmación de envío');
+            
+            // Restaurar botón
+            const button = document.querySelector('#contactForm button[type="submit"]');
+            button.innerHTML = '<i class="fas fa-paper-plane mr-2"></i>Enviar Mensaje';
+            button.disabled = false;
+            
+            // Mostrar toast de éxito
+            mostrarToast();
+            
+            // Limpiar formulario
+            document.getElementById('contactForm').reset();
+            
+            // Reset flag
+            formSubmitted = false;
+        }
+    }
+
+    // Función para mostrar el toast con animación
+    function mostrarToast() {
+        const toast = document.getElementById('toast');
+        const toastContent = toast.querySelector('div');
+        
+        // Mostrar el toast
+        toast.classList.remove('hidden');
+        
+        // Pequeño delay para la animación
+        setTimeout(() => {
+            toastContent.classList.remove('toast-enter');
+            toastContent.classList.add('toast-show');
+        }, 10);
+        
+        // Auto-ocultar después de 5 segundos
+        setTimeout(() => {
+            hideToast();
+        }, 5000);
+    }
+
+    // Función para ocultar el toast
+    function hideToast() {
+        const toast = document.getElementById('toast');
+        const toastContent = toast.querySelector('div');
+        
+        toastContent.classList.remove('toast-show');
+        toastContent.classList.add('toast-exit');
+        
+        setTimeout(() => {
+            toast.classList.add('hidden');
+            toastContent.classList.remove('toast-exit');
+            toastContent.classList.add('toast-enter');
+        }, 300);
+    }
+
+    // Debug: Verificar que todo esté configurado correctamente
+    console.log('🚀 Portafolio cargado correctamente');
+    console.log('✅ Formulario encontrado:', !!document.getElementById('contactForm'));
+    console.log('✅ Iframe encontrado:', !!document.querySelector('iframe[name="hidden_iframe"]'));
+    console.log('✅ Toast encontrado:', !!document.getElementById('toast'));
+</script>
+
+</body>
+</html>
